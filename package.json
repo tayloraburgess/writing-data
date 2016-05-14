@@ -1,0 +1,7 @@
+{
+  "name": "writing-data",
+  "version": "0.0.1",
+  "description": "Takes an input text file and returns basic information about it.",
+  "main": "script.js",
+  "license": "ISC"
+}
