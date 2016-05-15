@@ -3,5 +3,11 @@
   "version": "0.0.1",
   "description": "Takes an input text file and returns basic information about it.",
   "main": "script.js",
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+  	"wdata": "script.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }

@@ -1,6 +1,11 @@
-var fs = require("fs");
+#!/usr/bin/env node
 
-fs.readFile("text.txt", function (error, logData) {
+var fs = require("fs");
+var commander = require("commander");
+
+var checkF = function(file) {
+
+	fs.readFile(file, function (error, logData) {
 
 	if (error) throw error;
 
@@ -13,4 +18,14 @@ fs.readFile("text.txt", function (error, logData) {
 	}
 
 	console.log("Characters: " + characterCount);
-});
+	});
+
+}
+
+commander
+	.version('0.0.1')
+	.command('check <file>')
+	.description('Get data from file')
+	.action(checkF)
+
+commander.parse(process.argv)
