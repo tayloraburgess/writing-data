@@ -24,8 +24,7 @@ var checkF = function(file) {
 
 commander
 	.version('0.0.1')
-	.command('check <file>')
-	.description('Get data from file')
+	.usage('<file...>')
 	.action(checkF)
 
 commander.parse(process.argv)
