@@ -1,8 +1,9 @@
 {
   "name": "writing-data",
-  "version": "0.0.1",
-  "description": "Takes an input text file and returns basic information about it.",
+  "version": "1.0.0",
+  "description": "Bash tool that returns basic information about a text file.",
   "main": "script.js",
+  "author": "Taylor Burgess",
   "license": "ISC",
   "bin": {
   	"wdata": "script.js"
