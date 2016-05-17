@@ -20,10 +20,9 @@ var checkF = function(file) {
 			characterCount++;
 			if (lastCharIsBlank == 1 | i == 0) wordCount++;
 			lastCharIsBlank = 0;
+			if (!commander.emdash && thisChar == "—") lastCharIsBlank = 1;
 		}
-		else {
-			lastCharIsBlank = 1;
-		}	
+		else lastCharIsBlank = 1;
 	}	
 
 	console.log("Characters: " + characterCount);
@@ -35,6 +34,7 @@ var checkF = function(file) {
 commander
 	.version('0.0.1')
 	.usage('<file...>')
+	.option('-e, --emdash', 'Disallow emdash from splitting words')
 	.action(checkF)
 
 commander.parse(process.argv)
