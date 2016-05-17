@@ -12,12 +12,22 @@ var checkF = function(file) {
 	var fileText = logData.toString();
 
 	var characterCount = 0;
+	var wordCount = 0;
+	var lastCharIsBlank = 0;
 	for (i= 0; i < fileText.length; i++) {
 		var thisChar = fileText.charAt(i);
-		if (thisChar != " " && thisChar != "\n" && thisChar != "\t") characterCount++;
-	}
+		if (thisChar != " " && thisChar != "\n" && thisChar != "\t") {
+			characterCount++;
+			if (lastCharIsBlank == 1 | i == 0) wordCount++;
+			lastCharIsBlank = 0;
+		}
+		else {
+			lastCharIsBlank = 1;
+		}	
+	}	
 
 	console.log("Characters: " + characterCount);
+	console.log("Words: " + wordCount)
 	});
 
 }
