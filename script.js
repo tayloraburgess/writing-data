@@ -26,17 +26,15 @@ var main = function (file) {
 	}
 
 	if (commander.wordfreq) {
-		var wordPosition = 0;
+
 		var wordFreqCount = 0;
-		for (i = 0; i < fileText.length; i++) {
-			if (fileText.charAt(i) == commander.wordfreq.charAt(wordPosition)) {
-				if (wordPosition == (commander.wordfreq.length - 1)) {
-					wordFreqCount++;
-					wordPosition = 0;
-				}
-				else wordPosition++;
-			}
+		var wordFreqString = fileText;
+
+		while (fileText.search(commander.wordfreq) != -1) {
+			wordFreqCount++;
+			fileText = fileText.slice(fileText.search(commander.wordfreq) + commander.wordfreq.length - 1);
 		}
+
 	}
 	console.log("")	
 	console.log('"' + file + '" ' + "Stats")
